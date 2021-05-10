@@ -1,0 +1,20 @@
+<div class="">
+  <div class="row">
+    <div class="col-md-12">
+      <app-table-input (informationAdded)="onInformationAdded($event)"></app-table-input>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr  *ngFor="let info of information">
+        <td>{{info.uName}}</td>
+        <td>{{info.age}}</td>
+      </tr>
+
+    </table>
+  </div>
+</div>

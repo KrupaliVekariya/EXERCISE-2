@@ -1,0 +1,23 @@
+<div class="well">
+  <!-- input element for get user name -->
+  <div class="row">
+    <div class="col-md-12">
+      <label for="txtName">Enter Name:</label>
+      <input type="text" class="form-control" placeholder="enter name" [(ngModel)]="nameInput">
+    </div>
+  </div>
+  <!-- input element for get user age -->
+  <div class="row">
+    <div class="col-md-12">
+      <label for="txtAge">Enter Age:</label>
+      <input type="number" class="form-control" placeholder="enter age" [(ngModel)]="ageInput">
+    </div>
+  </div><br>
+  <!-- button for get information -->
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="onAddInfo()">Add</button>
+    </div>
+  </div>
+  </div>
+  <hr>
