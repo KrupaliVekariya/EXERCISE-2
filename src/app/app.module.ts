@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { DataOperationModule } from './data-operation/data-operation.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent

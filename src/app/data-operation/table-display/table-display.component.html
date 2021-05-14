@@ -1,20 +1,29 @@
-<div class="">
+<div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <!-- Input User Information -->
+    <div class="col-md-6">
       <app-table-input (informationAdded)="onInformationAdded($event)"></app-table-input>
     </div>
+  
+    <!-- Display User Information -->
+    <div class="col-md-6">
+      <h3>{{UserDetail}}</h3>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of information;index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{info.name}}</td>
+            <td>{{info.age}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-      </tr>
-      <tr  *ngFor="let info of information">
-        <td>{{info.uName}}</td>
-        <td>{{info.age}}</td>
-      </tr>
-
-    </table>
   </div>
-</div>

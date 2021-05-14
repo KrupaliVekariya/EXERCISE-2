@@ -1,23 +1,28 @@
-<div class="well">
-  <!-- input element for get user name -->
-  <div class="row">
-    <div class="col-md-12">
-      <label for="txtName">Enter Name:</label>
-      <input type="text" class="form-control" placeholder="enter name" [(ngModel)]="nameInput">
+
+  <form [formGroup]="infoForm" (ngSubmit)="onAddInfo()">
+    <h3>{{User}}</h3>
+    <div class="row">
+      <!-- input value for user name -->
+      <div class="form-group">
+        <label>Enter User Name:</label>
+        <input class="form-control" type="text" formControlName="txtName" placeholder="enter user name" [(ngModel)]="txtName">
+        <!-- validation for user name -->
+        <span class="feedback" *ngIf="!infoForm.get('txtName').valid && infoForm.get('txtName').touched">
+          Please enter valid user name
+        </span>
+      </div>
+
+      <!-- input value for user age -->
+      <div class="form-group">
+        <label>Enter User Age:</label>
+        <input class="form-control"  type="number" formControlName="txtAge" placeholder="enter user age" [(ngModel)]="txtAge">
+        <!-- validation for user age -->
+        <span class="feedback" *ngIf="!infoForm.get('txtAge').valid && infoForm.get('txtAge').touched">
+          Please enter valid user age
+        </span>
+      </div>
+      <!-- add user information -->
+      <button class="btn btn-primary mt-2" type="submit" [disabled]="!infoForm.valid">Add User Information</button>
     </div>
-  </div>
-  <!-- input element for get user age -->
-  <div class="row">
-    <div class="col-md-12">
-      <label for="txtAge">Enter Age:</label>
-      <input type="number" class="form-control" placeholder="enter age" [(ngModel)]="ageInput">
-    </div>
-  </div><br>
-  <!-- button for get information -->
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-primary" (click)="onAddInfo()">Add</button>
-    </div>
-  </div>
-  </div>
+  </form>
   <hr>

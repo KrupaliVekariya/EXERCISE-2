@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableDisplayComponent implements OnInit {
   information = [];
+  UserDetail='User Details'
   constructor() { }
 
   ngOnInit() {
